@@ -1,11 +1,97 @@
 [gd_scene format=2]
 
-[node name="CanvasLayer" type="CanvasLayer" index="0"]
+[node name="UI" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="DialogBox" type="Panel" parent="." index="0"]
+
+anchor_left = 0.05
+anchor_top = 0.65
+anchor_right = 0.95
+anchor_bottom = 0.95
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Popup", "custom_styles" ]
+
+[node name="DialogText" type="Label" parent="DialogBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel lorem molestie, dictum neque in, elementum est. Aenean pellentesque leo vitae quam tristique vestibulum. Aliquam sagittis, libero ut ornare euismod, ligula ligula suscipit arcu, non laoreet urna eros eu urna. Ut in pretium nisl, vitae blandit mi. Curabitur posuere, augue quis congue aliquam, eros magna maximus felis, quis pulvinar arcu nulla ac lacus. Etiam quis posuere urna. Aliquam eget fringilla justo. Sed non nisi dapibus, finibus nibh at, lacinia massa. Aliquam bibendum risus a mauris imperdiet aliquam. Curabitur egestas augue ac mi cursus dignissim. Aliquam vitae lacus eget diam ornare suscipit. Aliquam vitae efficitur neque.
+
+Vestibulum cursus luctus justo eget ultricies. Sed vitae elementum mauris. Cras dapibus erat ut dui vehicula, at congue leo tempus. Sed urna mauris, dapibus nec ultrices eu, fermentum id turpis. Quisque feugiat sed est at tincidunt. Integer efficitur tellus non sodales varius. Morbi vitae tellus accumsan, fringilla elit quis, ullamcorper nisl. Curabitur in tincidunt tellus, a tempor mi. Donec sed lacinia odio, at ullamcorper mi. Maecenas rhoncus aliquet laoreet. Curabitur euismod nisl lorem, sit amet rutrum magna sodales egestas. Nunc vehicula ex eu tristique eleifend. Praesent id dui lorem. Aenean non est mauris. Donec id vulputate orci.
+
+Ut ut lorem pretium, suscipit justo a, bibendum nibh. Ut vitae odio leo. Proin ut metus pellentesque dolor hendrerit dictum. Ut ut quam quam. Aenean a bibendum odio. Nulla nunc tortor, vulputate et velit a, mollis viverra dui. In a enim neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vel nunc tincidunt nisi auctor rhoncus id ac lorem. Vestibulum ullamcorper vehicula nisi vitae feugiat. Suspendisse placerat hendrerit sem. Sed sodales, ex scelerisque rhoncus porttitor, eros mauris commodo sapien, quis vestibulum est neque eget mauris. Mauris id mollis quam.
+
+Phasellus sagittis sapien eu dictum efficitur. Nam elementum urna eget blandit congue. Phasellus vel purus quis velit rutrum ultrices ut eget leo. Vestibulum ultricies diam convallis, malesuada sem quis, vulputate risus. Maecenas nec est quis turpis sollicitudin consectetur eget eget ligula. In ac odio ac dolor suscipit porttitor. Praesent non nibh molestie, dapibus odio a, rutrum erat. Integer commodo venenatis scelerisque. Nunc vulputate gravida ex ut accumsan. Maecenas consectetur nulla nisl, vitae varius eros pretium sed. Cras elementum porttitor volutpat. Proin ut metus ut neque feugiat iaculis. Fusce tincidunt metus vel condimentum ullamcorper. In posuere diam ac ante rhoncus, at feugiat metus cursus.
+
+Ut sit amet ex efficitur, vestibulum libero id, laoreet ex. Ut porta quam at turpis hendrerit rhoncus. Sed pretium purus quis neque vehicula, vitae dictum ligula maximus. Maecenas in dictum velit. Maecenas pretium vulputate pellentesque. Nullam sagittis lectus at sem auctor placerat. Donec dictum posuere arcu, quis commodo libero elementum at. Integer vel arcu tincidunt, maximus orci in, suscipit ante. Quisque ultricies, mi et auctor scelerisque, quam dolor scelerisque felis, sed porta justo mi et risus. Phasellus bibendum sem sit amet nisl vestibulum vulputate. Nulla facilisi.
+
+"
+autowrap = true
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="TimerContainer" type="Container" parent="." index="1"]
+
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Timer" type="Label" parent="TimerContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -56.0
+margin_top = 20.0
+margin_right = -10.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "5:00"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin" ]
 
 
