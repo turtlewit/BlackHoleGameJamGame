@@ -9,6 +9,9 @@ var state = STATE_NORMAL
 
 var time = 300.0
 
+var interaction_key = "interact"
+var interaction_key_letter = "E"
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
