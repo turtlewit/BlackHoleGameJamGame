@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/CameraScript.gd" type="Script" id=1]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
 
 [node name="Camera2D" type="Camera2D" index="0"]
 
@@ -29,44 +28,5 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 1 )
 zoomSpeed = 0.25
-
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-texture = ExtResource( 2 )
-
-[node name="Sprite2" type="Sprite" parent="." index="1"]
-
-position = Vector2( 174.217, 38.2248 )
-texture = ExtResource( 2 )
-
-[node name="Sprite3" type="Sprite" parent="." index="2"]
-
-position = Vector2( -123.495, 47.7809 )
-texture = ExtResource( 2 )
-
-[node name="Sprite4" type="Sprite" parent="." index="3"]
-
-position = Vector2( -126.436, -138.197 )
-texture = ExtResource( 2 )
-
-[node name="Sprite5" type="Sprite" parent="." index="4"]
-
-position = Vector2( 194.064, -130.111 )
-texture = ExtResource( 2 )
-
-[node name="Sprite6" type="Sprite" parent="." index="5"]
-
-position = Vector2( -208.031, 168.336 )
-texture = ExtResource( 2 )
-
-[node name="Sprite7" type="Sprite" parent="." index="6"]
-
-position = Vector2( 201.666, 365.446 )
-texture = ExtResource( 2 )
-
-[node name="Sprite8" type="Sprite" parent="." index="7"]
-
-position = Vector2( -423.154, 422.248 )
-texture = ExtResource( 2 )
 
 
