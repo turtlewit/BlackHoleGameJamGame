@@ -3,15 +3,15 @@
 [ext_resource path="res://room2/room0012.png" type="Texture" id=1]
 [ext_resource path="res://room2/room0006.png" type="Texture" id=2]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=3]
-[ext_resource path="res://room2/room0004.png" type="Texture" id=4]
-[ext_resource path="res://room2/room0005.png" type="Texture" id=5]
-[ext_resource path="res://room2/room0011.png" type="Texture" id=6]
-[ext_resource path="res://room2/room0015.png" type="Texture" id=7]
-[ext_resource path="res://room2/room0013.png" type="Texture" id=8]
-[ext_resource path="res://room2/room0009.png" type="Texture" id=9]
-[ext_resource path="res://room2/room0000.png" type="Texture" id=10]
-[ext_resource path="res://room2/room0010.png" type="Texture" id=11]
-[ext_resource path="res://room2/room0002.png" type="Texture" id=12]
+[ext_resource path="res://room2/room0011.png" type="Texture" id=4]
+[ext_resource path="res://room2/room0004.png" type="Texture" id=5]
+[ext_resource path="res://room2/room0015.png" type="Texture" id=6]
+[ext_resource path="res://room2/room0013.png" type="Texture" id=7]
+[ext_resource path="res://room2/room0009.png" type="Texture" id=8]
+[ext_resource path="res://room2/room0000.png" type="Texture" id=9]
+[ext_resource path="res://room2/room0010.png" type="Texture" id=10]
+[ext_resource path="res://room2/room0002.png" type="Texture" id=11]
+[ext_resource path="res://room2/room0005.png" type="Texture" id=12]
 [ext_resource path="res://room2/room0007.png" type="Texture" id=13]
 [ext_resource path="res://room2/room0008.png" type="Texture" id=14]
 
@@ -44,27 +44,25 @@ position = Vector2( -184.665, 120.739 )
 scale = Vector2( 2.57001, 2.75437 )
 texture = ExtResource( 3 )
 
-[node name="FuelRoom1" type="Sprite" parent="." index="2"]
+[node name="FuelRoom" type="Sprite" parent="." index="2"]
 
-editor/display_folded = true
-position = Vector2( 4460, 1050 )
+position = Vector2( 460, 2250 )
 texture = ExtResource( 4 )
 
-[node name="Fuel" type="Sprite" parent="FuelRoom1" index="0"]
+[node name="Fuel" type="Sprite" parent="FuelRoom" index="0"]
 
-position = Vector2( 40, -30 )
-scale = Vector2( 3.3125, 3.78125 )
+position = Vector2( -140, 20 )
+scale = Vector2( 3.05859, 3.20313 )
 texture = ExtResource( 3 )
 
-[node name="FuelRoom2" type="Sprite" parent="." index="3"]
+[node name="FuelRoom1" type="Sprite" parent="." index="3"]
 
-editor/display_folded = true
-position = Vector2( 1260, 2250 )
+position = Vector2( 4460, 1050 )
 texture = ExtResource( 5 )
 
-[node name="Fuel" type="Sprite" parent="FuelRoom2" index="0"]
+[node name="Fuel1" type="Sprite" parent="FuelRoom1" index="0"]
 
-position = Vector2( -10, 20 )
+position = Vector2( -140, 10 )
 scale = Vector2( 3.3125, 3.78125 )
 texture = ExtResource( 3 )
 
@@ -85,7 +83,7 @@ texture = ExtResource( 3 )
 
 editor/display_folded = true
 position = Vector2( 2060, 2850 )
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Engine1" type="Sprite" parent="EngineRoom2" index="0"]
@@ -98,7 +96,7 @@ texture = ExtResource( 3 )
 
 editor/display_folded = true
 position = Vector2( 2860, 450 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="EngineerDiary" type="Sprite" parent="EngineerRoom" index="0"]
 
@@ -110,7 +108,7 @@ texture = ExtResource( 3 )
 
 editor/display_folded = true
 position = Vector2( 3660, 2850 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="EngineParts" type="Sprite" parent="EnginePartRoom" index="0"]
 
@@ -127,7 +125,7 @@ texture = ExtResource( 2 )
 
 editor/display_folded = true
 position = Vector2( 2860, 1650 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 
 [node name="Storage" type="Sprite" parent="CaptianRoom" index="0"]
 
@@ -139,7 +137,7 @@ texture = ExtResource( 3 )
 
 editor/display_folded = true
 position = Vector2( 4460, 1650 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="Oxygen" type="Sprite" parent="OxygenRoom" index="0"]
 
@@ -151,7 +149,7 @@ texture = ExtResource( 3 )
 
 editor/display_folded = true
 position = Vector2( 3660, 450 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="FoolBar" type="Sprite" parent="FoolBarRoom" index="0"]
 
@@ -163,7 +161,7 @@ texture = ExtResource( 3 )
 
 editor/display_folded = true
 position = Vector2( 5260, 1650 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="warp" type="Sprite" parent="WarpRoom" index="0"]
 
@@ -171,25 +169,25 @@ position = Vector2( 180, 0 )
 scale = Vector2( 2.35937, 2.4375 )
 texture = ExtResource( 3 )
 
-[node name="ConnectRoom0" type="Sprite" parent="." index="13"]
+[node name="ConnectRoom1" type="Sprite" parent="." index="13"]
 
-position = Vector2( 460, 2250 )
-texture = ExtResource( 6 )
+position = Vector2( 1260, 2250 )
+texture = ExtResource( 12 )
 
 [node name="ConnectRoom2" type="Sprite" parent="." index="14"]
 
 position = Vector2( 2060, 1050 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="ConnectRoom3" type="Sprite" parent="." index="15"]
 
 position = Vector2( 2860, 1050 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="ConnectRoom4" type="Sprite" parent="." index="16"]
 
 position = Vector2( 2060, 2250 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="ConnectRoom5" type="Sprite" parent="." index="17"]
 
@@ -199,7 +197,7 @@ texture = ExtResource( 13 )
 [node name="ConnectRoom6" type="Sprite" parent="." index="18"]
 
 position = Vector2( 2860, 2250 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="ConnectRoom7" type="Sprite" parent="." index="19"]
 
@@ -209,22 +207,22 @@ texture = ExtResource( 14 )
 [node name="ConnectRoom8" type="Sprite" parent="." index="20"]
 
 position = Vector2( 3660, 2250 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="ConnectRoom9" type="Sprite" parent="." index="21"]
 
 position = Vector2( 3660, 1650 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="ConnectRoom10" type="Sprite" parent="." index="22"]
 
 position = Vector2( 4460, 2250 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="ConnectRoom11" type="Sprite" parent="." index="23"]
 
 position = Vector2( 1260, 1050 )
-texture = ExtResource( 5 )
+texture = ExtResource( 12 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="24"]
 
