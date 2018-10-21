@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Black_Hole_Milkyway.jpeg" type="Texture" id=1]
 [ext_resource path="res://Scripts/ShipAnchor1.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/ShipAnchor2.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Rooms.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ship.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefabs/Entities/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Prefabs/MainCamera.tscn" type="PackedScene" id=7]
@@ -27,17 +27,20 @@ position = Vector2( 0, -30000 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Rooms" parent="ShipAnchor1/ShipAnchor2" index="0" instance=ExtResource( 4 )]
+[node name="Ship" parent="ShipAnchor1/ShipAnchor2" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( -2848.98, -1673.25 )
+position = Vector2( -3542.58, -1284.28 )
+scale = Vector2( 1, 1 )
 
-[node name="InteractableEntity" parent="ShipAnchor1/ShipAnchor2/Rooms" index="25" instance=ExtResource( 5 )]
+[node name="InteractableEntity" parent="ShipAnchor1/ShipAnchor2/Ship" index="25" instance=ExtResource( 5 )]
 
-position = Vector2( 859.716, 1050.37 )
+position = Vector2( 860.392, 410.389 )
+scale = Vector2( 1, 1 )
 
 [node name="KinematicBody2D" parent="ShipAnchor1/ShipAnchor2" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -2384.34, -30.1055 )
+position = Vector2( -3025.29, -52.8809 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Camera2D" parent="ShipAnchor1/ShipAnchor2/KinematicBody2D" index="2" instance=ExtResource( 7 )]
 
