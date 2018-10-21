@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/RoomSetting/Room24.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/RoomSetting/Room12.tscn" type="PackedScene" id=2]
@@ -18,7 +18,7 @@
 [ext_resource path="res://Assets/RoomSetting/Room132.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/RoomSetting/Room134.tscn" type="PackedScene" id=17]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
@@ -26,16 +26,6 @@ animations = [ {
 "name": "Off",
 "speed": 5.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 1650, 750 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 690, 490 )
 
 [node name="Ship" type="Node2D" index="0"]
 
@@ -47,6 +37,7 @@ position = Vector2( 510, 410 )
 
 [node name="Bridge" parent="." index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 position = Vector2( 510, 1240 )
 
 [node name="ShipAI" parent="Bridge" index="10" instance=ExtResource( 3 )]
@@ -59,7 +50,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Bridge/ShipAI" index="0"]
 
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 animation = "On"
 playing = true
 
@@ -128,6 +119,7 @@ position = Vector2( -130, 0 )
 
 [node name="CaptainRoom" parent="." index="9" instance=ExtResource( 11 )]
 
+editor/display_folded = true
 position = Vector2( 3570, 1240 )
 
 [node name="Captain`s Comp" type="Sprite" parent="CaptainRoom" index="11"]
@@ -184,13 +176,13 @@ position = Vector2( 3570, 2060 )
 
 position = Vector2( 4590, 410 )
 
-[node name="Room8" parent="." index="19" instance=ExtResource( 9 )]
+[node name="Room8" parent="." index="19" instance=ExtResource( 14 )]
 
-position = Vector2( 4590, 2060 )
+position = Vector2( 4590, 2070 )
 
 [node name="Room9" parent="." index="20" instance=ExtResource( 9 )]
 
-position = Vector2( 5610, 2060 )
+position = Vector2( 5610, 2070 )
 
 [node name="Room10" parent="." index="21" instance=ExtResource( 14 )]
 
@@ -218,18 +210,58 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 0, 2320, 2200, 2310, 2200, 3150, 4940, 3150, 4930, 2310, 5960, 2310, 5960, 1490, 7000, 1490, 6990, 990, 5960, 990, 5960, 170, 4940, 170, 4940, -670, 2200, -670, 2200, 150, 0, 150, 0, -1430, 7480, -1440, 7480, 4260, 0, 4220 )
+polygon = PoolVector2Array( 0, 2320, 850, 2320, 850, 2130, 1190, 2130, 1190, 2320, 1870, 2310, 1870, 2130, 2200, 2130, 2200, 2310, 2480, 2310, 2480, 2640, 2200, 2640, 2200, 3150, 2900, 3150, 2900, 2960, 3220, 2960, 3220, 3150, 3920, 3150, 3920, 2960, 4240, 2960, 4240, 3150, 4940, 3150, 4933.95, 2641.61, 4660, 2640, 4660, 2310, 4930, 2310, 4930, 2140, 5260, 2140, 5260, 2310, 5960, 2310, 5960, 1817, 5680, 1820, 5680, 1490, 5960, 1490, 5960, 1310, 6290, 1310, 6290, 1490, 7000, 1490, 6990, 990, 6280, 990, 6280, 1170, 5960, 1170, 5960, 990, 5690, 990, 5690, 660, 5960, 659.622, 5960, 170, 5258.4, 170, 5260, 660, 5540, 660, 5540, 990, 5260, 990, 5260, 1170, 4940, 1170, 4940, 980, 4660, 980, 4660, 660, 4940, 660, 4940, 170, 4660, 170, 4660, -170, 4940, -170.324, 4940, -670, 4250, -670, 4250, -490, 3910, -490, 3910, -670, 3230, -670, 3230, -490, 2890, -490, 2890, -670, 2210, -670, 2210, -170.515, 2480, -170, 2480, 150, 2210, 150, 2210, 340, 1870, 340, 1870, 150, 1190, 150, 1190, 340, 850, 340, 850, 150, 164.258, 150, 165.607, 659.825, 440, 660, 440, 990, 170, 990, 170, 1490, 440, 1490, 440, 1810, 170, 1810, 170, 2320, 0, 2320, 0, -1430, 7480, -1440, 7480, 4260, 0, 4220 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" index="1"]
 
-position = Vector2( 1530, 1235 )
-scale = Vector2( 0.405324, 0.750332 )
-shape = SubResource( 1 )
+build_mode = 0
+polygon = PoolVector2Array( 860, 480, 1190, 480, 1190, 660, 1880, 660, 1880, 480, 2200, 480, 2200, 660, 2480, 660, 2480, 980, 2200, 980, 2200, 1500, 2470, 1500, 2470, 1810, 2190, 1810, 2200, 1990, 1890, 1990, 1890, 1810, 1180, 1810, 1180, 1980, 860, 1980, 860, 1810, 590, 1810, 590, 1490, 860, 1490, 860, 980, 590, 980, 590, 670, 860, 670 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="2"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" index="2"]
 
-position = Vector2( 75, 1248.5 )
-scale = Vector2( 0.108225, 2.23428 )
-shape = SubResource( 2 )
+build_mode = 0
+polygon = PoolVector2Array( 2890, -350, 3230, -350, 3230, -170, 3490, -170, 3490, 160, 3230, 160, 3230, 340, 2890, 340, 2890, 150, 2620, 150, 2620, -170, 2890, -170 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" index="3"]
+
+position = Vector2( 1030, 840 )
+build_mode = 0
+polygon = PoolVector2Array( 2890, -350, 3230, -350, 3230, -170, 3490, -170, 3490, 160, 3230, 160, 3230, 340, 2890, 340, 2890, 150, 2620, 150, 2620, -170, 2890, -170 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D" index="4"]
+
+position = Vector2( 1020, 1660 )
+build_mode = 0
+polygon = PoolVector2Array( 2890, -350, 3230, -350, 3230, -170, 3490, -170, 3490, 160, 3230, 160, 3230, 340, 2890, 340, 2890, 150, 2620, 150, 2620, -170, 2890, -170 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D" index="5"]
+
+position = Vector2( 2040, 1660 )
+build_mode = 0
+polygon = PoolVector2Array( 2890, -350, 3230, -350, 3230, -170, 3490, -170, 3490, 160, 3230, 160, 3230, 340, 2890, 340, 2890, 150, 2620, 150, 2620, -170, 2890, -170 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D" index="6"]
+
+position = Vector2( 1030, 2480 )
+build_mode = 0
+polygon = PoolVector2Array( 2890, -350, 3230, -350, 3230, -170, 3490, -170, 3490, 160, 3230, 160, 3230, 340, 2890, 340, 2890, 150, 2620, 150, 2620, -170, 2890, -170 )
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D" index="7"]
+
+position = Vector2( 0, 2480 )
+build_mode = 0
+polygon = PoolVector2Array( 2890, -350, 3230, -350, 3230, -170, 3490, -170, 3490, 160, 3230, 160, 3230, 340, 2890, 340, 2890, 150, 2620, 150, 2620, -170, 2890, -170 )
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D" index="8"]
+
+position = Vector2( 0, 1650 )
+build_mode = 0
+polygon = PoolVector2Array( 2900, -1170, 3220, -1170, 3220, -990, 3500, -990, 3500, -660, 3220, -660, 3230, -170, 3490, -170, 3490, 160, 3230, 160, 3230, 340, 2890, 340, 2890, 150, 2620, 150, 2620, -170, 2890, -170, 2890, -660, 2620, -660, 2620, -990, 2900, -990 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" index="9"]
+
+position = Vector2( 1030, 10 )
+build_mode = 0
+polygon = PoolVector2Array( 2890, -350, 3230, -350, 3230, -170, 3490, -170, 3490, 160, 3230, 160, 3230, 340, 2890, 340, 2890, 150, 2620, 150, 2620, -170, 2890, -170 )
 
 
