@@ -4,7 +4,7 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 
-var speed = 10
+var speed = 72
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
