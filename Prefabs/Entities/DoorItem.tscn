@@ -1,11 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/Entities/IntractableEntity.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Entities/DoorRepairPickup.gd" type="Script" id=1]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 20, 20 )
+extents = Vector2( 40, 40 )
 
 [node name="DoorObjectEntity" type="Area2D"]
 
@@ -19,13 +20,20 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 entity_popup_path = NodePath("EntityPopup")
 entity_popup_key_path = NodePath("EntityPopup/Key")
+ui_path = NodePath("/root/Node2D/UI")
+text = "Nüül"
 
-[node name="EntityArea" type="CollisionShape2D" parent="." index="0"]
+[node name="ItemSprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="EntityArea" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
 
-[node name="EntityPopup" type="Panel" parent="." index="1"]
+[node name="EntityPopup" type="Panel" parent="." index="2"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -61,8 +69,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin" ]
-
-[node name="ItemSprite" type="Sprite" parent="." index="2"]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 

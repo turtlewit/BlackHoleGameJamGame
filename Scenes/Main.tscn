@@ -1,129 +1,398 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Black_Hole_Milkyway.jpeg" type="Texture" id=1]
-[ext_resource path="res://Scripts/ShipAnchor1.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/ShipAnchor2.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/BG_Sprite.gd" type="Script" id=2]
+[ext_resource path="res://Prefabs/UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/ship.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Prefabs/Entities/Door.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Prefabs/Fire.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Prefabs/Entities/Panel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Prefabs/MainCamera.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Prefabs/UI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Prefabs/Fire.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/Entities/Panel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/Entities/SpecialDoor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Entities/Door.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Entities/TurnedDoor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/Entities/DoorItem.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Prefabs/Entities/OxygenItem.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Prefabs/Entities/Journal.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Prefabs/Entities/Key.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scripts/Entities/EngineParts.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/Entities/NonWorkingEngine.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/Entities/Warp.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/Entities/Foobar.gd" type="Script" id=17]
+[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Prefabs/MainCamera.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Prefabs/ShipHide.tscn" type="PackedScene" id=20]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="BG_Sprite" type="Sprite" parent="." index="0"]
 
 scale = Vector2( 50, 50 )
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="ShipAnchor1" type="RigidBody2D" parent="." index="1"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 2
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ShipAnchor2" type="RigidBody2D" parent="ShipAnchor1" index="0"]
+[node name="UI" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 0, -30000 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 2
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Ship" parent="ShipAnchor1/ShipAnchor2" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( -3542.58, -1284.28 )
-scale = Vector2( 1, 1 )
-
-[node name="InteractableEntity" parent="ShipAnchor1/ShipAnchor2/Ship" index="25" instance=ExtResource( 5 )]
-
-position = Vector2( 1019.47, 414.762 )
-rotation = 1.5708
-scale = Vector2( 1, 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="InteractableEntity2" parent="ShipAnchor1/ShipAnchor2/Ship" index="26" instance=ExtResource( 5 )]
-
-position = Vector2( 509.794, 825.107 )
-scale = Vector2( 1, 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Fire" parent="ShipAnchor1/ShipAnchor2/Ship" index="27" instance=ExtResource( 6 )]
-
-position = Vector2( 1433.47, 311.062 )
-
-[node name="Fire2" parent="ShipAnchor1/ShipAnchor2/Ship" index="28" instance=ExtResource( 6 )]
-
-position = Vector2( 1529.41, 402.709 )
-
-[node name="Fire3" parent="ShipAnchor1/ShipAnchor2/Ship" index="29" instance=ExtResource( 6 )]
-
-position = Vector2( 1490.75, 465.715 )
-
-[node name="Fire4" parent="ShipAnchor1/ShipAnchor2/Ship" index="30" instance=ExtResource( 6 )]
-
-position = Vector2( 1519.39, 533.018 )
-
-[node name="Fire5" parent="ShipAnchor1/ShipAnchor2/Ship" index="31" instance=ExtResource( 6 )]
-
-position = Vector2( 1437.76, 206.527 )
-
-[node name="Panel" parent="ShipAnchor1/ShipAnchor2/Ship" index="32" instance=ExtResource( 7 )]
-
-position = Vector2( 283.554, 1213.72 )
-ui_path = NodePath("../../../../UI")
-text = "Test"
-
-[node name="KinematicBody2D" parent="ShipAnchor1/ShipAnchor2" index="1" instance=ExtResource( 8 )]
-
-position = Vector2( -3034.86, -925.836 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Camera2D" parent="ShipAnchor1/ShipAnchor2/KinematicBody2D" index="2" instance=ExtResource( 9 )]
-
-scale = Vector2( 0.715083, 1.66234 )
-
-[node name="UI" parent="." index="2" instance=ExtResource( 10 )]
-
-[node name="Node2D" type="Node2D" parent="." index="3"]
+[node name="Node2D" type="Node2D" parent="." index="2"]
 
 position = Vector2( 0.434082, -8168.68 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Ship" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( -3542.58, -31284.3 )
+scale = Vector2( 1, 1 )
+
+[node name="Fire" parent="Ship" index="25" instance=ExtResource( 5 )]
+
+position = Vector2( 1433.47, 311.062 )
+
+[node name="Fire2" parent="Ship" index="26" instance=ExtResource( 5 )]
+
+position = Vector2( 1529.41, 402.709 )
+
+[node name="Fire3" parent="Ship" index="27" instance=ExtResource( 5 )]
+
+position = Vector2( 1490.75, 465.715 )
+
+[node name="Fire4" parent="Ship" index="28" instance=ExtResource( 5 )]
+
+position = Vector2( 1519.39, 533.018 )
+
+[node name="Fire5" parent="Ship" index="29" instance=ExtResource( 5 )]
+
+position = Vector2( 1437.76, 206.527 )
+
+[node name="Panel" parent="Ship" index="30" instance=ExtResource( 6 )]
+
+position = Vector2( 283.554, 1213.72 )
+ui_path = NodePath("../../UI")
+text_intro1 = null
+text_intro2 = null
+text_on_route = null
+text_avoid1 = null
+text_avoid2 = null
+text_comet = null
+text_cargo = null
+text_useless = null
+text_omega = null
+text_probing = null
+text_asteroid = null
+
+[node name="Doors" type="Node2D" parent="Ship" index="31"]
+
+editor/display_folded = true
+
+[node name="InteractableEntity" parent="Ship/Doors" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( 508.028, 825.07 )
+
+[node name="Door2" parent="Ship/Doors" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 510.674, 1652.05 )
+
+[node name="Door" parent="Ship/Doors" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 1019.38, 413.533 )
+
+[node name="Door3" parent="Ship/Doors" index="3" instance=ExtResource( 9 )]
+
+position = Vector2( 2039.58, 414.191 )
+
+[node name="Door4" parent="Ship/Doors" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( 3057.57, 414.439 )
+
+[node name="Door5" parent="Ship/Doors" index="5" instance=ExtResource( 9 )]
+
+position = Vector2( 4082.52, 421.279 )
+
+[node name="Door6" parent="Ship/Doors" index="6" instance=ExtResource( 9 )]
+
+position = Vector2( 6119.77, 1244.99 )
+
+[node name="Door7" parent="Ship/Doors" index="7" instance=ExtResource( 9 )]
+
+position = Vector2( 5097.72, 2073.95 )
+
+[node name="Door8" parent="Ship/Doors" index="8" instance=ExtResource( 9 )]
+
+position = Vector2( 5100.59, 1245.17 )
+
+[node name="Door9" parent="Ship/Doors" index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 4082.85, 1249.26 )
+
+[node name="Door10" parent="Ship/Doors" index="10" instance=ExtResource( 9 )]
+
+position = Vector2( 4079.29, 2069.08 )
+
+[node name="Door11" parent="Ship/Doors" index="11" instance=ExtResource( 9 )]
+
+position = Vector2( 4081.32, 2894.39 )
+
+[node name="Door12" parent="Ship/Doors" index="12" instance=ExtResource( 9 )]
+
+position = Vector2( 3061.42, 2894.69 )
+
+[node name="Door13" parent="Ship/Doors" index="13" instance=ExtResource( 9 )]
+
+position = Vector2( 2033.83, 2062.7 )
+
+[node name="Door14" parent="Ship/Doors" index="14" instance=ExtResource( 9 )]
+
+position = Vector2( 3062.73, 2066.8 )
+
+[node name="Door15" parent="Ship/Doors" index="15" instance=ExtResource( 9 )]
+
+position = Vector2( 1016.7, 2059.84 )
+
+[node name="Door16" parent="Ship/Doors" index="16" instance=ExtResource( 9 )]
+
+position = Vector2( 3060.85, -416.705 )
+
+[node name="Door17" parent="Ship/Doors" index="17" instance=ExtResource( 9 )]
+
+position = Vector2( 4077.88, -416.559 )
+
+[node name="Door18" parent="Ship/Doors" index="18" instance=ExtResource( 8 )]
+
+position = Vector2( 2550.95, -3.6875 )
+
+[node name="Door19" parent="Ship/Doors" index="19" instance=ExtResource( 8 )]
+
+position = Vector2( 3568.19, -5.66797 )
+
+[node name="Door20" parent="Ship/Doors" index="20" instance=ExtResource( 8 )]
+
+position = Vector2( 4589.27, -5.07422 )
+
+[node name="Door21" parent="Ship/Doors" index="21" instance=ExtResource( 8 )]
+
+position = Vector2( 5609.74, 825.381 )
+
+[node name="Door22" parent="Ship/Doors" index="22" instance=ExtResource( 8 )]
+
+position = Vector2( 4590.77, 822.65 )
+
+[node name="Door23" parent="Ship/Doors" index="23" instance=ExtResource( 8 )]
+
+position = Vector2( 3570.61, 824.223 )
+
+[node name="Door24" parent="Ship/Doors" index="24" instance=ExtResource( 8 )]
+
+position = Vector2( 2550.06, 825.021 )
+
+[node name="Door25" parent="Ship/Doors" index="25" instance=ExtResource( 8 )]
+
+position = Vector2( 2546.24, 1653.03 )
+
+[node name="Door26" parent="Ship/Doors" index="26" instance=ExtResource( 8 )]
+
+position = Vector2( 3565.3, 1652.21 )
+
+[node name="Door28" parent="Ship/Doors" index="27" instance=ExtResource( 8 )]
+
+position = Vector2( 5608.29, 1654.09 )
+
+[node name="Door29" parent="Ship/Doors" index="28" instance=ExtResource( 8 )]
+
+position = Vector2( 4587.26, 2481.24 )
+
+[node name="Door30" parent="Ship/Doors" index="29" instance=ExtResource( 8 )]
+
+position = Vector2( 3567.41, 2473.21 )
+
+[node name="Door31" parent="Ship/Doors" index="30" instance=ExtResource( 8 )]
+
+position = Vector2( 2547.8, 2475.3 )
+
+[node name="Door27" parent="Ship/Doors" index="31" instance=ExtResource( 8 )]
+
+position = Vector2( 4592.08, 1653.43 )
+
+[node name="Pickups" type="Node2D" parent="Ship" index="32"]
+
+editor/display_folded = true
+
+[node name="DoorObjectEntity" parent="Ship/Pickups" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 217.66, 213.363 )
+
+[node name="Oxygen" parent="Ship/Pickups" index="1" instance=ExtResource( 11 )]
+
+position = Vector2( 5601.05, 1230.35 )
+scale = Vector2( 5, 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Journal" parent="Ship/Pickups" index="2" instance=ExtResource( 12 )]
+
+position = Vector2( 3545.77, -461.609 )
+scale = Vector2( 0.727602, 0.748627 )
+
+[node name="Key" parent="Ship/Pickups" index="3" instance=ExtResource( 13 )]
+
+position = Vector2( 3402.63, 1243.25 )
+scale = Vector2( 0.627696, 0.596588 )
+
+[node name="EngineP" parent="Ship/Pickups" index="4" instance=ExtResource( 13 )]
+
+position = Vector2( 4720.31, 3032.69 )
+scale = Vector2( 0.722124, 0.41922 )
+script = ExtResource( 14 )
+
+[node name="WorkingEngine" parent="Ship/Pickups" index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 2549.76, -456.146 )
+scale = Vector2( 1, 0.450409 )
+
+[node name="Key2" parent="Ship/Pickups" index="6" instance=ExtResource( 13 )]
+
+position = Vector2( 2540.18, 2903.12 )
+scale = Vector2( 1, 0.351257 )
+script = ExtResource( 15 )
+text2 = null
+
+[node name="Key3" parent="Ship/Pickups" index="7" instance=ExtResource( 13 )]
+
+position = Vector2( 6840.39, 1328.86 )
+scale = Vector2( 0.549583, 0.721038 )
+script = ExtResource( 16 )
+text2 = null
+
+[node name="Key4" parent="Ship/Pickups" index="8" instance=ExtResource( 13 )]
+
+position = Vector2( 4635.94, -478.232 )
+scale = Vector2( 0.549583, 0.598034 )
+script = ExtResource( 17 )
+
+[node name="KinematicBody2D" parent="." index="4" instance=ExtResource( 18 )]
+
+position = Vector2( -3034.86, -30925.8 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Camera2D" parent="KinematicBody2D" index="2" instance=ExtResource( 19 )]
+
+scale = Vector2( 0.715083, 1.66234 )
+rotating = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Hides" type="Node2D" parent="." index="5"]
+
+position = Vector2( -3039.8, -30047.8 )
+scale = Vector2( 21.8982, 15.8168 )
+
+[node name="ShipHide" parent="Hides" index="0" instance=ExtResource( 20 )]
+
+position = Vector2( 46.8807, -52.2239 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide2" parent="Hides" index="1" instance=ExtResource( 20 )]
+
+position = Vector2( 93.7008, -52.2238 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide3" parent="Hides" index="2" instance=ExtResource( 20 )]
+
+position = Vector2( 93.2191, -104.577 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide4" parent="Hides" index="3" instance=ExtResource( 20 )]
+
+position = Vector2( 139.964, -104.426 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide5" parent="Hides" index="4" instance=ExtResource( 20 )]
+
+position = Vector2( 186.883, -104.699 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide6" parent="Hides" index="5" instance=ExtResource( 20 )]
+
+position = Vector2( 140.029, -52.6824 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide7" parent="Hides" index="6" instance=ExtResource( 20 )]
+
+position = Vector2( 186.774, -51.7751 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide8" parent="Hides" index="7" instance=ExtResource( 20 )]
+
+position = Vector2( 232.754, -51.775 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide9" parent="Hides" index="8" instance=ExtResource( 20 )]
+
+position = Vector2( 233.051, -0.349365 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide10" parent="Hides" index="9" instance=ExtResource( 20 )]
+
+position = Vector2( 280.001, -0.349365 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide11" parent="Hides" index="10" instance=ExtResource( 20 )]
+
+position = Vector2( 186.844, -0.143799 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide12" parent="Hides" index="11" instance=ExtResource( 20 )]
+
+position = Vector2( 140.042, 0.2677 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide13" parent="Hides" index="12" instance=ExtResource( 20 )]
+
+position = Vector2( 93.6472, 0.0819092 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide14" parent="Hides" index="13" instance=ExtResource( 20 )]
+
+position = Vector2( 93.4051, 51.686 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide15" parent="Hides" index="14" instance=ExtResource( 20 )]
+
+position = Vector2( 139.754, 52.3564 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide16" parent="Hides" index="15" instance=ExtResource( 20 )]
+
+position = Vector2( 187.193, 52.6917 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide17" parent="Hides" index="16" instance=ExtResource( 20 )]
+
+position = Vector2( 233.052, 53.063 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide18" parent="Hides" index="17" instance=ExtResource( 20 )]
+
+position = Vector2( 186.388, 105.044 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide19" parent="Hides" index="18" instance=ExtResource( 20 )]
+
+position = Vector2( 139.862, 104.439 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide20" parent="Hides" index="19" instance=ExtResource( 20 )]
+
+position = Vector2( 92.8983, 104.591 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide21" parent="Hides" index="20" instance=ExtResource( 20 )]
+
+position = Vector2( 46.7713, 52.4241 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide22" parent="Hides" index="21" instance=ExtResource( 20 )]
+
+position = Vector2( 0.24202, 52.6096 )
+scale = Vector2( 1, 1 )
+
+[node name="ShipHide23" parent="Hides" index="22" instance=ExtResource( 20 )]
+
+scale = Vector2( 1, 1 )
 
 

@@ -19,6 +19,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 entity_popup_path = NodePath("EntityPopup")
 entity_popup_key_path = NodePath("EntityPopup/Key")
+ui_path = NodePath("/root/Node2D/UI")
 
 [node name="EntityArea" type="CollisionShape2D" parent="." index="0"]
 

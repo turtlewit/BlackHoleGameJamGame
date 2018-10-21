@@ -18,7 +18,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 75, 150 )
 
-[node name="Panel" type="Area2D" index="0"]
+[node name="Panel" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -30,8 +30,18 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 entity_popup_path = NodePath("EntityPopup")
 entity_popup_key_path = NodePath("EntityPopup/Key")
-ui_path = null
-text = null
+ui_path = NodePath("/root/Node2D/UI")
+text_intro1 = null
+text_intro2 = null
+text_on_route = null
+text_avoid1 = null
+text_avoid2 = null
+text_comet = null
+text_cargo = null
+text_useless = null
+text_omega = null
+text_probing = null
+text_asteroid = null
 
 [node name="PanelSprite" type="AnimatedSprite" parent="." index="0"]
 

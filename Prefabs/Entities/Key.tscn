@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Entities/IntractableEntity.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Entities/Key.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 333.313, 340.9 )
 
-[node name="InteractableEntity" type="Area2D" index="0"]
+[node name="Key" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -20,6 +20,7 @@ script = ExtResource( 1 )
 entity_popup_path = NodePath("EntityPopup")
 entity_popup_key_path = NodePath("EntityPopup/Key")
 ui_path = NodePath("/root/Node2D/UI")
+text = null
 
 [node name="EntityArea" type="CollisionShape2D" parent="." index="0"]
 

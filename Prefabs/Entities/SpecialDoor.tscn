@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/Entities/DoorEntity.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Entities/DoorEntitySpecial.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/DoorSprite.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/DoorOpen.ogg" type="AudioStream" id=3]
 
@@ -14,7 +14,7 @@ extents = Vector2( 150, 200 )
 custom_solver_bias = 0.0
 extents = Vector2( 75, 170 )
 
-[node name="Door" type="Area2D"]
+[node name="SpecialDoor" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

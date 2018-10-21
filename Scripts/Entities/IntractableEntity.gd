@@ -13,6 +13,9 @@ export(NodePath) var entity_popup_key_path = NodePath("EntityPopup/Key")
 onready var entity_popup = get_node(entity_popup_path)
 onready var entity_popup_key = get_node(entity_popup_key_path)
 
+export(NodePath) var ui_path = NodePath("/root/Node2D/UI")
+onready var ui = get_node(ui_path)
+
 var collided
 
 func _ready():

@@ -19,9 +19,8 @@ func _ready():
 #	pass
 
 func on_interaction():
-	if door.disabled == false and Manager.DOOR_ITEM in Manager.player_items and Manager.TERMINAL in Manager.player_items:
+	if door.disabled == false and Manager.DOOR_ITEM in Manager.player_items:
 		Manager.player_resources[Manager.O2] -= 1
-		Manager.time -= 60
 		door.disabled = true
 		door_sprite.frame = 1
 		audio.play(0)
