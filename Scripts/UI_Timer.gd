@@ -4,7 +4,6 @@ extends Label
 # var a = 2
 # var b = "textvar"
 
-onready var manager = get_node("/root/Manager")
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -14,4 +13,4 @@ func _ready():
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
-	text = '%d:%02d' % [int(manager.time / 60), int(manager.time) % 60]
+	text = '%d:%02d' % [int(Manager.time / 60), int(Manager.time) % 60]

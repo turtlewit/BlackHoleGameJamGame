@@ -6,7 +6,6 @@ extends "res://Scripts/Entities/IntractableEntity.gd"
 
 onready var door = get_node("DoorBody/DoorCollider")
 onready var door_sprite = get_node("DoorSprite")
-onready var manager = get_node("/root/Manager")
 onready var audio = get_node("DoorAudio")
 
 func _ready():
@@ -21,7 +20,7 @@ func _ready():
 
 func on_interaction():
 	if door.disabled == false:
-		manager.player_resources[manager.O2] -= 1
+		Manager.player_resources[Manager.O2] -= 1
 		door.disabled = true
 		door_sprite.frame = 1
 		audio.play(0)

@@ -7,7 +7,6 @@ extends "res://Scripts/Entities/IntractableEntity.gd"
 export(NodePath) var ui_path
 export(String) var text
 onready var ui = get_node(ui_path)
-onready var manager = get_node("/root/Manager")
 onready var sprite = $PanelSprite
 
 func _ready():
@@ -21,5 +20,5 @@ func _ready():
 #	pass
 
 func on_interaction():
-	manager.dialogue(ui, text)
+	Manager.dialogue(ui, text)
 	sprite.frame = 1
