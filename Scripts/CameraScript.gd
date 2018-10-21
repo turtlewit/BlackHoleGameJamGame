@@ -4,8 +4,9 @@ extends Camera2D
 # var a = 2
 # var b = "textvar"
 
-export var zoomSpeed = 1.0
+var zoomSpeed = 5
 var direction = 0
+var newZoom = Vector2(1, 1)
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -15,9 +16,10 @@ func _ready():
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
-	var newZoom = zoom + Vector2(zoomSpeed, zoomSpeed) * direction
-	if newZoom > Vector2(0, 0):
-		zoom = newZoom
+	if newZoom + Vector2(zoomSpeed, zoomSpeed) * direction > Vector2(0, 0):
+		newZoom += Vector2(zoomSpeed, zoomSpeed) * direction
+	print(Vector2(zoomSpeed, zoomSpeed))
+	zoom = zoom.linear_interpolate(newZoom, 1 * delta)
 	direction = 0
 
 func _input(event):

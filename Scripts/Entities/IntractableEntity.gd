@@ -13,6 +13,8 @@ export(NodePath) var entity_popup_key_path = NodePath("EntityPopup/Key")
 onready var entity_popup = get_node(entity_popup_path)
 onready var entity_popup_key = get_node(entity_popup_key_path)
 
+var collided
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -32,8 +34,10 @@ func _on_body_entered(body):
 	can_interact = true
 	print("true")
 	entity_popup.visible = true
+	collided = body
 
 
 func _on_body_exited(body):
 	can_interact = false
 	entity_popup.visible = false
+	collided = null
