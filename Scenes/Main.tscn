@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Black_Hole_Milkyway.jpeg" type="Texture" id=1]
 [ext_resource path="res://Scripts/ShipAnchor1.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/ShipAnchor2.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/ship.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefabs/Entities/Door.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Prefabs/MainCamera.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Prefabs/UI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Fire.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/Entities/Panel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/MainCamera.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/UI.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,13 +19,50 @@ scale = Vector2( 50, 50 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ShipAnchor1" type="Node2D" parent="." index="1"]
+[node name="ShipAnchor1" type="RigidBody2D" parent="." index="1"]
 
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 2
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="ShipAnchor2" type="Node2D" parent="ShipAnchor1" index="0"]
+[node name="ShipAnchor2" type="RigidBody2D" parent="ShipAnchor1" index="0"]
 
 position = Vector2( 0, -30000 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 2
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
@@ -45,16 +84,42 @@ position = Vector2( 509.794, 825.107 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="KinematicBody2D" parent="ShipAnchor1/ShipAnchor2" index="1" instance=ExtResource( 6 )]
+[node name="Fire" parent="ShipAnchor1/ShipAnchor2/Ship" index="27" instance=ExtResource( 6 )]
 
-position = Vector2( -3025.29, -52.8809 )
+position = Vector2( 1433.47, 311.062 )
+
+[node name="Fire2" parent="ShipAnchor1/ShipAnchor2/Ship" index="28" instance=ExtResource( 6 )]
+
+position = Vector2( 1529.41, 402.709 )
+
+[node name="Fire3" parent="ShipAnchor1/ShipAnchor2/Ship" index="29" instance=ExtResource( 6 )]
+
+position = Vector2( 1490.75, 465.715 )
+
+[node name="Fire4" parent="ShipAnchor1/ShipAnchor2/Ship" index="30" instance=ExtResource( 6 )]
+
+position = Vector2( 1519.39, 533.018 )
+
+[node name="Fire5" parent="ShipAnchor1/ShipAnchor2/Ship" index="31" instance=ExtResource( 6 )]
+
+position = Vector2( 1437.76, 206.527 )
+
+[node name="Panel" parent="ShipAnchor1/ShipAnchor2/Ship" index="32" instance=ExtResource( 7 )]
+
+position = Vector2( 283.554, 1213.72 )
+ui_path = NodePath("../../../../UI")
+text = "Test"
+
+[node name="KinematicBody2D" parent="ShipAnchor1/ShipAnchor2" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( -3034.86, -925.836 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="Camera2D" parent="ShipAnchor1/ShipAnchor2/KinematicBody2D" index="2" instance=ExtResource( 7 )]
+[node name="Camera2D" parent="ShipAnchor1/ShipAnchor2/KinematicBody2D" index="2" instance=ExtResource( 9 )]
 
 scale = Vector2( 0.715083, 1.66234 )
 
-[node name="UI" parent="." index="2" instance=ExtResource( 8 )]
+[node name="UI" parent="." index="2" instance=ExtResource( 10 )]
 
 [node name="Node2D" type="Node2D" parent="." index="3"]
 
