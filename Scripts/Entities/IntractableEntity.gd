@@ -24,17 +24,20 @@ func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	if can_interact:
+		print(true)
 		if Input.is_action_just_pressed(interaction_key):
 			on_interaction()
+	else:
+		print(false)
 
 func on_interaction():
 	pass
 
 func _on_body_entered(body):
-	can_interact = true
-	print("true")
-	entity_popup.visible = true
-	collided = body
+	if body.name == "KinematicBody2D":
+		can_interact = true
+		entity_popup.visible = true
+		collided = body
 
 
 func _on_body_exited(body):

@@ -18,7 +18,6 @@ func _process(delta):
 	# Update game logic here.
 	if newZoom + Vector2(zoomSpeed, zoomSpeed) * direction > Vector2(0, 0):
 		newZoom += Vector2(zoomSpeed, zoomSpeed) * direction
-	print(Vector2(zoomSpeed, zoomSpeed))
 	zoom = zoom.linear_interpolate(newZoom, 1 * delta)
 	direction = 0
 

@@ -4,7 +4,7 @@ extends "res://Scripts/Entities/IntractableEntity.gd"
 # var a = 2
 # var b = "textvar"
 
-onready var door = get_node("DoorBody")
+onready var door = get_node("DoorBody/DoorCollider")
 onready var manager = get_node("/root/Manager")
 
 func _ready():
@@ -19,4 +19,4 @@ func _ready():
 
 func on_interaction():
 	manager.time -= 60
-	door.visible = false
+	door.disabled = true
