@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Floor.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Wall2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Block.png" type="Texture" id=3]
+[ext_resource path="res://Assets/RoomSetting/Door.png" type="Texture" id=4]
+
+[node name="Room1234" type="Sprite" index="0"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 686, 490 )
+_sections_unfolded = [ "Region", "Transform", "Visibility" ]
+
+[node name="UpWall" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0, -330 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 686, 170 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="RightWall" type="Sprite" parent="." index="1"]
+
+position = Vector2( 429, 0 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 490, 170 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="LeftWall" type="Sprite" parent="." index="2"]
+
+position = Vector2( -429, 0 )
+rotation = -1.5708
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 490, 170 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="DownWall" type="Sprite" parent="." index="3"]
+
+position = Vector2( 0, 330 )
+rotation = 3.14159
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 686, 170 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="Block" type="Sprite" parent="." index="4"]
+
+position = Vector2( -428, 330 )
+scale = Vector2( 1.307, 1.307 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Block2" type="Sprite" parent="." index="5"]
+
+position = Vector2( -428, -330 )
+scale = Vector2( 1.307, 1.307 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Block3" type="Sprite" parent="." index="6"]
+
+position = Vector2( 428, 330 )
+scale = Vector2( 1.307, 1.307 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Block4" type="Sprite" parent="." index="7"]
+
+position = Vector2( 428, -330 )
+scale = Vector2( 1.307, 1.307 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Door1" type="Sprite" parent="." index="8"]
+
+position = Vector2( 0, -330 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Door2" type="Sprite" parent="." index="9"]
+
+position = Vector2( 0, 330 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Door3" type="Sprite" parent="." index="10"]
+
+position = Vector2( -428, 0 )
+rotation = -1.5708
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+
