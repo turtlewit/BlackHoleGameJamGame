@@ -7,7 +7,7 @@ extends Node
 enum {STATE_NORMAL, STATE_TIME_PAUSED}
 var state = STATE_NORMAL
 
-var time = 310.0
+var time = 300.0
 
 var interaction_key = "interact"
 var interaction_key_letter = "E"
