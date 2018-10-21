@@ -5,6 +5,7 @@ extends "res://Scripts/Entities/IntractableEntity.gd"
 # var b = "textvar"
 
 onready var door = get_node("DoorBody/DoorCollider")
+onready var door_sprite = get_node("DoorSprite")
 onready var manager = get_node("/root/Manager")
 
 func _ready():
@@ -21,6 +22,8 @@ func on_interaction():
 	if door.disabled == false:
 		manager.time -= 60
 		door.disabled = true
+		door_sprite.frame = 1
+		
 
 func _on_body_entered(body):
 	if door.disabled == false:

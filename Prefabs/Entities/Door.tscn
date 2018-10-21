@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Entities/DoorEntity.gd" type="Script" id=1]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://Prefabs/DoorSprite.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 43.5037, 77.3523 )
+extents = Vector2( 150, 200 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 77.117 )
+extents = Vector2( 75, 170 )
 
-[node name="InteractableEntity" type="Area2D" index="0"]
+[node name="InteractableEntity" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -26,11 +26,17 @@ script = ExtResource( 1 )
 entity_popup_path = NodePath("EntityPopup")
 entity_popup_key_path = NodePath("EntityPopup/Key")
 
-[node name="EntityArea" type="CollisionShape2D" parent="." index="0"]
+[node name="DoorSprite" parent="." index="0" instance=ExtResource( 2 )]
+
+scale = Vector2( 0.6, 0.6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EntityArea" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="DoorBody" type="StaticBody2D" parent="." index="1"]
+[node name="DoorBody" type="StaticBody2D" parent="." index="2"]
 
 input_pickable = false
 collision_layer = 1
@@ -44,13 +50,7 @@ bounce = 0.0
 
 shape = SubResource( 2 )
 
-[node name="DoorSprite" type="Sprite" parent="DoorBody" index="1"]
-
-position = Vector2( 0.37085, -0.042614 )
-scale = Vector2( 0.308368, 2.42145 )
-texture = ExtResource( 2 )
-
-[node name="EntityPopup" type="Panel" parent="." index="2"]
+[node name="EntityPopup" type="Panel" parent="." index="3"]
 
 visible = false
 anchor_left = 0.0
