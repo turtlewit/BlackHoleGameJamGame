@@ -7,6 +7,7 @@ extends "res://Scripts/Entities/IntractableEntity.gd"
 onready var door = get_node("DoorBody/DoorCollider")
 onready var door_sprite = get_node("DoorSprite")
 onready var manager = get_node("/root/Manager")
+onready var audio = get_node("DoorAudio")
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -23,6 +24,7 @@ func on_interaction():
 		manager.time -= 60
 		door.disabled = true
 		door_sprite.frame = 1
+		audio.play(0)
 		
 
 func _on_body_entered(body):
