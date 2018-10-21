@@ -20,7 +20,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Resource" ]
 
-[node name="StartScene" type="CanvasLayer" index="0"]
+[node name="StartScene" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
