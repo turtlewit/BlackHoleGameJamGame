@@ -4,10 +4,11 @@ extends "res://Scripts/Entities/IntractableEntity.gd"
 # var a = 2
 # var b = "textvar"
 
-onready var door = get_node("DoorBody/DoorCollider")
-onready var door_sprite = get_node("DoorSprite")
+export(NodePath) var ui_path
+export(String) var text
+onready var ui = get_node(ui_path)
 onready var manager = get_node("/root/Manager")
-onready var audio = get_node("DoorAudio")
+onready var sprite = $PanelSprite
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -20,13 +21,5 @@ func _ready():
 #	pass
 
 func on_interaction():
-	if door.disabled == false:
-		manager.player_resources[manager.O2] -= 1
-		door.disabled = true
-		door_sprite.frame = 1
-		audio.play(0)
-		
-
-func _on_body_entered(body):
-	if door.disabled == false:
-		._on_body_entered(body)
+	manager.dialogue(ui, text)
+	sprite.frame = 1
