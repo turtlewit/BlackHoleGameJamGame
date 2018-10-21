@@ -43,7 +43,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Ship" type="Node2D" index="0"]
+[node name="Ship" type="Node2D"]
 
 position = Vector2( -20, 10 )
 
