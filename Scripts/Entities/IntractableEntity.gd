@@ -20,15 +20,12 @@ func _ready():
 	# Initialization here
 	entity_popup_key.text = interaction_key_letter
 
-func _process(delta):
+func _physics_process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	if can_interact:
-		print(true)
 		if Input.is_action_just_pressed(interaction_key):
 			on_interaction()
-	else:
-		print(false)
 
 func on_interaction():
 	pass
