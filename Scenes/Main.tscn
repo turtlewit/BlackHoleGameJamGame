@@ -34,7 +34,7 @@ scale = Vector2( 1, 1 )
 
 [node name="InteractableEntity" parent="ShipAnchor1/ShipAnchor2/Ship" index="25" instance=ExtResource( 5 )]
 
-position = Vector2( 856.222, 406.217 )
+position = Vector2( 860.392, 410.389 )
 scale = Vector2( 1, 1 )
 
 [node name="KinematicBody2D" parent="ShipAnchor1/ShipAnchor2" index="1" instance=ExtResource( 6 )]

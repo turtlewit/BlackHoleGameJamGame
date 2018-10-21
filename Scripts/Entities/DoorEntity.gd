@@ -18,5 +18,10 @@ func _ready():
 #	pass
 
 func on_interaction():
-	manager.time -= 60
-	door.disabled = true
+	if door.disabled == false:
+		manager.time -= 60
+		door.disabled = true
+
+func _on_body_entered(body):
+	if door.disabled == false:
+		._on_body_entered(body)
