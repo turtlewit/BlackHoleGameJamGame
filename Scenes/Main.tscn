@@ -9,7 +9,7 @@
 [ext_resource path="res://Prefabs/MainCamera.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Prefabs/UI.tscn" type="PackedScene" id=8]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -40,6 +40,7 @@ scale = Vector2( 1, 1 )
 [node name="KinematicBody2D" parent="ShipAnchor1/ShipAnchor2" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( -3025.29, -52.8809 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Camera2D" parent="ShipAnchor1/ShipAnchor2/KinematicBody2D" index="2" instance=ExtResource( 7 )]
 
