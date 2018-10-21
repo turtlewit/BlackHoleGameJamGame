@@ -14,4 +14,4 @@ func _ready():
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
-	text = '%d:%d' % [int(manager.time / 60), int(manager.time) % 60]
+	text = '%d:%02d' % [int(manager.time / 60), int(manager.time) % 60]
