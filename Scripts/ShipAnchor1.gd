@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 
 # class member variables go here, for example:
 # var a = 2
@@ -8,13 +8,18 @@ var rotation_speed = -0.1
 var rotation_speed_increase = -0.2
 onready var manager = get_node("/root/Manager")
 onready var initial_time = manager.time
+var new_rotation = 0.0
+onready var ship = get_node("ShipAnchor2/Ship")
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
 
-func _process(delta):
+func _physics_process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
-	rotate((rotation_speed + ((initial_time - manager.time) / initial_time) * rotation_speed_increase) * delta)
+	new_rotation += ((rotation_speed + ((initial_time - manager.time) / initial_time) * rotation_speed_increase) * delta)
+
+func _integrate_forces(state):
+	rotation = new_rotation

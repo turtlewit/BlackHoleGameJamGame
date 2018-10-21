@@ -26,6 +26,7 @@ shape = SubResource( 1 )
 
 [node name="EntityPopup" type="Panel" parent="." index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -40,7 +41,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Material", "Rect" ]
 
 [node name="Key" type="Label" parent="EntityPopup" index="0"]
 
