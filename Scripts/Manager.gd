@@ -49,7 +49,7 @@ func _process(delta):
 			close_dialogue_special()
 	
 	if time < 300 and not HAS_DODGE in player_items:
-		pass # game over
+		get_tree().change_scene("res://Scenes/GameOverScene.tscn")
 		
 
 func count_down_normal(delta):

@@ -34,12 +34,8 @@ ui_path = NodePath("/root/Node2D/UI")
 text_intro1 = null
 text_intro2 = null
 text_on_route = null
-text_avoid1 = null
-text_avoid2 = null
 text_comet = null
 text_cargo = null
-text_useless = null
-text_omega = null
 text_probing = null
 text_asteroid = null
 

@@ -17,7 +17,7 @@
 [ext_resource path="res://Scripts/Entities/NonWorkingEngine.gd" type="Script" id=15]
 [ext_resource path="res://Scripts/Entities/Warp.gd" type="Script" id=16]
 [ext_resource path="res://Scripts/Entities/Foobar.gd" type="Script" id=17]
-[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Prefabs/Player1.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Prefabs/MainCamera.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Prefabs/ShipHide.tscn" type="PackedScene" id=20]
 
@@ -64,19 +64,15 @@ position = Vector2( 1437.76, 206.527 )
 
 [node name="Panel" parent="Ship" index="30" instance=ExtResource( 6 )]
 
-position = Vector2( 283.554, 1213.72 )
+position = Vector2( 267.97, 1213.72 )
 ui_path = NodePath("../../UI")
-text_intro1 = null
-text_intro2 = null
-text_on_route = null
-text_avoid1 = null
-text_avoid2 = null
-text_comet = null
-text_cargo = null
-text_useless = null
-text_omega = null
-text_probing = null
-text_asteroid = null
+text_intro1 = "You've just woken up, head pounding and alone, the ship dark save the dim reserve power lighting. Your last memory is grabbing a drink of water before going into cryo. You should've been in asleep like a baby, at long last heading back to earth now that your deployment has ended. The only thing around is a plasma torch, and all the doors are sealed. The ship's emergency protocol must've been activated for countering high radiation and hull damage. Suddenly the ground lurches out from under you, and you hear an explosion ahead ,in the direction of one of the ships engines! At this rate, everyone asleep in the cryobay on the other floors will never make it home. You have to get to the command room and see what's going on.  "
+text_intro2 = ""
+text_on_route = "TIME REMAINING TO ALTER PATH FOR NEXT ENCOUNTER: %f"
+text_comet = "RESULTS FROM INVESITGATING BODY: COMET. 1 FUEL and 5 O2 ACQUIRED"
+text_cargo = "RESULTS FROM INVESTIGATING BODY: CARGO BAY. 2 FUEL AND 10 O2 ACQUIRED"
+text_probing = "PROBING"
+text_asteroid = "AVOID ASTEROID BY USING FUEL, OR BY CLOSING IN ON BLACK HOLE? Y/N"
 
 [node name="Doors" type="Node2D" parent="Ship" index="31"]
 
@@ -212,72 +208,79 @@ position = Vector2( 4592.08, 1653.43 )
 
 [node name="Pickups" type="Node2D" parent="Ship" index="32"]
 
-editor/display_folded = true
-
 [node name="DoorObjectEntity" parent="Ship/Pickups" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( 217.66, 213.363 )
+text = "Picked up item"
 
 [node name="Oxygen" parent="Ship/Pickups" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( 5601.05, 1230.35 )
 scale = Vector2( 5, 5 )
 _sections_unfolded = [ "Transform" ]
+text = "Picked up item"
 
 [node name="Journal" parent="Ship/Pickups" index="2" instance=ExtResource( 12 )]
 
 position = Vector2( 3545.77, -461.609 )
 scale = Vector2( 0.727602, 0.748627 )
+text = "Picked up item"
 
 [node name="Key" parent="Ship/Pickups" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 3402.63, 1243.25 )
 scale = Vector2( 0.627696, 0.596588 )
+text = "Picked up item"
 
 [node name="EngineP" parent="Ship/Pickups" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 4720.31, 3032.69 )
 scale = Vector2( 0.722124, 0.41922 )
 script = ExtResource( 14 )
+text = "Picked up item"
 
 [node name="WorkingEngine" parent="Ship/Pickups" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 2549.76, -456.146 )
 scale = Vector2( 1, 0.450409 )
+text = "Picked up item"
 
 [node name="Key2" parent="Ship/Pickups" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 2540.18, 2903.12 )
 scale = Vector2( 1, 0.351257 )
 script = ExtResource( 15 )
-text2 = null
+text = "Picked up item"
+text2 = "Picked up item"
 
 [node name="Key3" parent="Ship/Pickups" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 6840.39, 1328.86 )
 scale = Vector2( 0.549583, 0.721038 )
 script = ExtResource( 16 )
-text2 = null
+text = "Picked up item"
+text2 = "Picked up item"
 
 [node name="Key4" parent="Ship/Pickups" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 4635.94, -478.232 )
 scale = Vector2( 0.549583, 0.598034 )
 script = ExtResource( 17 )
+text = "Picked up item"
 
 [node name="KinematicBody2D" parent="." index="4" instance=ExtResource( 18 )]
 
-position = Vector2( -3034.86, -30925.8 )
+position = Vector2( -3213.15, -30879.8 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Camera2D" parent="KinematicBody2D" index="2" instance=ExtResource( 19 )]
 
-scale = Vector2( 0.715083, 1.66234 )
 rotating = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hides" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( -3039.8, -30047.8 )
 scale = Vector2( 21.8982, 15.8168 )
 

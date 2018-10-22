@@ -6,12 +6,8 @@ extends "res://Scripts/Entities/IntractableEntity.gd"
 export(String) var text_intro1
 export(String) var text_intro2
 export(String) var text_on_route
-export(String) var text_avoid1
-export(String) var text_avoid2
 export(String) var text_comet
 export(String) var text_cargo
-export(String) var text_useless
-export(String) var text_omega
 export(String) var text_probing
 export(String) var text_asteroid
 
@@ -54,7 +50,7 @@ func enc3_no():
 	Manager.time -= 180
 
 func on_interaction():
-	if not Manager.TERMINAL in Manager.player_items:
+	if Manager.TERMINAL in Manager.player_items:
 		if Manager.STASHED in Manager.player_items:
 			if Manager.HAS_COMET in Manager.player_items:
 				Manager.player_items.remove(Manager.STASHED)
@@ -69,19 +65,19 @@ func on_interaction():
 				Manager.player_resources[Manager.O2] += 10
 				Manager.dialogue(ui, text_cargo)
 		elif not Manager.ENC1 in Manager.player_items and Manager.time > 900:
-			Manager.special_dialogue(ui, text_on_route % Manager.start_time - 900, funcref(self, "enc1_yes"), funcref(self, "enc1_no"))
+			Manager.special_dialogue(ui, text_on_route % (Manager.start_time - 900), funcref(self, "enc1_yes"), funcref(self, "enc1_no"))
 		elif Manager.ENC1 in Manager.player_items and Manager.time > 900:
 			Manager.dialogue(ui, text_probing)
 		elif not Manager.ENC2 in Manager.player_items and Manager.time > 600:
-			Manager.special_dialogue(ui, text_on_route % Manager.time - 600, funcref(self, "enc2_yes"), funcref(self, "enc2_no"))
+			Manager.special_dialogue(ui, text_on_route % (Manager.time - 600), funcref(self, "enc2_yes"), funcref(self, "enc2_no"))
 		elif Manager.ENC2 in Manager.player_items and Manager.time > 600:
 			Manager.dialogue(ui, text_probing)
 		elif Manager.time > 300:
 			Manager.special_dialogue(ui, text_asteroid, funcref(self, "enc3_yes"), funcref(self, "enc3_no"))
 		if Manager.WARP in Manager.player_items and Manager.CAPTAIN_KEY in Manager.player_items:
-			pass # win
+			get_tree().change_scene("res://Scenes/WinScene.tscn")
 		if Manager.player_resources[Manager.FUEL] == 3 and Manager.REPAIRED in Manager.player_items:
-			pass # win
+			get_tree().change_scene("res://Scenes/WinScene.tscn")
 	
 	else:
 		Manager.dialogue(ui, text_intro1 + text_intro2)
